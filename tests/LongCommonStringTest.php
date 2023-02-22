@@ -15,7 +15,7 @@ class LongCommonStringTest extends testcase
      * @dataProvider arrayProvider
      * @test
      */
-    public function fin_the_longest_common_prefix_string($array, $expected)
+    public function find_the_longest_common_prefix_string($array, $expected)
     {
         $this->assertSame($expected, LongestCommonString::find($array));
     }
