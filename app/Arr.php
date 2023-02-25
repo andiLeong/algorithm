@@ -2,20 +2,41 @@
 
 namespace App;
 
+use InvalidArgumentException;
+
 class Arr
 {
     /**
      * get the next value of array
      * @param array $arr
-     * @param int $index
-     * @param int|null $nextIndex
+     * @param int|string|null $index
+     * @param int|string|null $nextIndex
      * @return mixed|void
      */
-    public static function next(array $arr, int $index, int $nextIndex = null)
+    public static function next(array $arr, int|string $index = null, int|string $nextIndex = null)
     {
-        $nextIndex ??= $index + 1;
-        if(isset($arr[$nextIndex])){
+        if (is_null($index) && is_null($nextIndex)) {
+            throw new InvalidArgumentException('we cant get the next item for you, since index is not provided');
+        }
+
+        if (array_is_list($arr)) {
+            $nextIndex ??= $index + 1;
+            return $arr[$nextIndex] ?? null;
+        }
+
+        if ($nextIndex !== null && array_key_exists($nextIndex, $arr)) {
             return $arr[$nextIndex];
+        }
+
+        if ($index !== null && array_key_exists($index, $arr)) {
+            $copy = $arr;
+
+            while (current($copy) !== $copy[$index]) {
+                next($copy);
+            };
+
+            $next = next($copy);
+            return $next === false ? null : $next;
         }
     }
 
@@ -24,14 +45,14 @@ class Arr
         // using sort with reduce
         $index = 0;
         sort($arr, SORT_NUMERIC);
-        return array_reduce($arr, function($carry, $value) use(&$index, $arr){
-            if(static::next($arr, $index) === $value){
+        return array_reduce($arr, function ($carry, $value) use (&$index, $arr) {
+            if (static::next($arr, $index) === $value) {
                 return true;
             }
 
             $index++;
             return $carry;
-        },false);
+        }, false);
 
         //using foreach
         $new = [];

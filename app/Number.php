@@ -5,6 +5,34 @@ namespace App;
 class Number
 {
 
+    /**
+     * convert integer to array that cast to integer
+     * @param int $number
+     * @return array
+     */
+    public static function toArray(int $number)
+    {
+        return array_map('intval', str_split(abs($number)));
+    }
+
+    /**
+     * get the sum up of an integer number
+     * @param int $number
+     * @return int
+     */
+    public static function sum(int $number)
+    {
+        //we can use array_sum here, but playing with reduce is not a bad idea haha
+        return array_reduce(
+            static::toArray($number),
+            function ($carry, $v) {
+                $carry += $v;
+                return $carry;
+            },
+            0
+        );
+    }
+
     public static function getLastDigits($number, $length = 4)
     {
         if ($length <= 0) {

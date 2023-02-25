@@ -26,16 +26,45 @@ class NumberTest extends TestCase
         $this->assertSame($expected, Number::reverse($number));
     }
 
+    /** @test */
+    public function it_can_sum_of_integer()
+    {
+        $this->assertSame(13, Number::sum(265));
+        $this->assertSame(13, Number::sum(-265));
+    }
+
+    /**
+     * @dataProvider numberToArrayProvider
+     * @test
+     */
+    public function it_can_get_convert_integer_to_array($number, $expected)
+    {
+        $this->assertSame($expected, $arr = Number::toArray($number));
+        foreach ($arr as $value){
+            $this->assertTrue(is_int($value));
+        }
+    }
+
+    public static function numberToArrayProvider()
+    {
+        return [
+            [1234, [1,2,3,4]],
+            [1233, [1,2,3,3]],
+            [-1233, [1,2,3,3]],
+            [123300, [1,2,3,3,0,0]],
+        ];
+    }
+
     public static function reverseNumberProvider()
     {
         return [
-            [1234,4321],
-            [23,32],
-            [2000,0002],
-            [1990,991],
-            [0,0],
-            [-1965,-5691],
-            [-456,-654],
+            [1234, 4321],
+            [23, 32],
+            [2000, 0002],
+            [1990, 991],
+            [0, 0],
+            [-1965, -5691],
+            [-456, -654],
         ];
     }
 
