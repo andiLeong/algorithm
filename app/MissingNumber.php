@@ -6,8 +6,7 @@ class MissingNumber
 {
     public static function find(array $arr)
     {
-        $length = count($arr);
-        $lookUp = range(min($arr), $length);
+        $lookUp = NumberArr::range(NumberArr::make($arr)->smallest(), count($arr));
 
         sort($arr, SORT_NUMERIC);
         foreach ($lookUp as $key => $value) {

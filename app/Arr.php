@@ -69,4 +69,40 @@ class Arr
         $originalLength = sizeof($arr);
         return $originalLength !== count(array_unique($arr));
     }
+
+    /**
+     * get the array values count
+     * @param $arr
+     * @return array
+     */
+    public static function valuesCount($arr)
+    {
+        $count = [];
+
+        foreach ($arr as $value){
+            if(array_key_exists($value, $count)){
+               $count[$value] += 1;
+            }else{
+               $count[$value] = 1;
+            }
+        }
+
+        return $count;
+    }
+
+    /**
+     * flip the array key and value
+     * @param array $arr
+     * @return array
+     */
+    public static function flip(array $arr)
+    {
+        $res = [];
+
+        foreach ($arr as $key => $value){
+            $res[$value] = $key;
+        }
+
+        return $res;
+    }
 }

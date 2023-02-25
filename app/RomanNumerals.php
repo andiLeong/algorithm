@@ -83,7 +83,7 @@ class RomanNumerals
 
             //if we need special calculation, we will get the value, then set the skip flag to true
             //so on the next loop it's not going calculate since we ready did
-            if ($number = $this->needSpecialCalculation($value, Arr::next($arr, $index))) {
+            if ($number = $this->needSpecialCalculation($value, NumberArr::make($arr)->next($index))) {
                 $skip = true;
             } else {
                 $number = $this->representation[$value];
@@ -111,7 +111,7 @@ class RomanNumerals
         $sum = 0;
         foreach ($arr as $index => &$value) {
 
-            if ($number = $this->needSpecialCalculation($value, Arr::next($arr, $index))) {
+            if ($number = $this->needSpecialCalculation($value, NumberArr::make($arr)->next($index))) {
                 $arr[$index + 1] = 'Z';
             } else {
                 $number = $this->representation[$value];
