@@ -129,4 +129,41 @@ class Arr
 //        dump($res);
         return $res;
     }
+
+    /**
+     * make unique item of an array
+     * @param array $arr
+     * @return array
+     */
+    public static function unique(array $arr)
+    {
+        $new = [];
+
+        foreach ($arr as $index => $value){
+
+            if(in_array($value, $new)){
+               continue;
+            }
+
+            $new[$index] = $value;
+        }
+
+        return $new;
+    }
+
+
+    /**
+     * get the count of array
+     * @param array $arr
+     * @return int
+     */
+    public static function size(array $arr)
+    {
+        $size = 0;
+        foreach ($arr as $value){
+           $size ++;
+        }
+        return $size;
+    }
+
 }

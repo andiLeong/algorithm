@@ -17,6 +17,24 @@ class ArrTest extends TestCase
     }
 
     /**
+     * @dataProvider uniqueProvider
+     * @test
+     */
+    public function it_can_get_unique_items_from_array($arr, $expected)
+    {
+        $this->assertSame($expected, Arr::unique($arr));
+    }
+
+    /**
+     * @dataProvider countProvider
+     * @test
+     */
+    public function it_can_get_array_size($arr, $expected)
+    {
+        $this->assertSame($expected, Arr::size($arr));
+    }
+
+    /**
      * @dataProvider flipProvider
      * @test
      */
@@ -79,4 +97,23 @@ class ArrTest extends TestCase
             [['foo' => 'bar', 'fb' => 'bar'], ['hi' => 'bar'], ['foo' => 'bar', 'fb' => 'bar']],
         ];
     }
+
+    public static function uniqueProvider()
+    {
+        return [
+            [[4, '4', '3', 3], [0 => 4, 2 => '3']],
+            [
+                ['a' => 'green', 'red', 'b' => 'green', 'blue', 'red'],
+                ['a' => 'green', 0 => 'red', 1 => 'blue']
+            ],
+        ];
+    }
+
+    public static function countProvider()
+    {
+        return [
+            [[4, '4', '3', 3], 4],
+        ];
+    }
+
 }
