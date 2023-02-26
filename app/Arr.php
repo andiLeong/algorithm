@@ -105,4 +105,28 @@ class Arr
 
         return $res;
     }
+
+    /**
+     * find the intersection of 2 array
+     * @param $arr
+     * @param $arr2
+     * @return array
+     */
+    public static function intersection($arr, $arr2)
+    {
+//        $hi = array_intersect($arr, $arr2);
+//        dump($hi);
+//        return $hi;
+
+        $res = [];
+
+        foreach ($arr as $index => $value){
+            if(in_array($value, $arr2, true)){
+                $res[$index] = $value;
+            }
+        }
+
+//        dump($res);
+        return $res;
+    }
 }
