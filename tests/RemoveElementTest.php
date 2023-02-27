@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use App\RemoveDuplicatesFromSortedArray as RemoveDuplicatesFromSortedArrayAlias;
 use App\RemoveElement;
 use PHPUnit\Framework\TestCase;
 
