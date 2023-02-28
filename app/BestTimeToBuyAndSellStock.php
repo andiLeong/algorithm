@@ -6,35 +6,34 @@ class BestTimeToBuyAndSellStock
 {
     public static function handle(array $price)
     {
-        $buyIndex = 0;
+        $profit = 0;
+        $minPrice = PHP_INT_MAX;
+
+        foreach ($price as $value) {
+            if ($value < $minPrice){
+                $minPrice = $value;
+            } else if ($value - $minPrice > $profit){
+                $profit = $value - $minPrice;
+            }
+        }
+        return $profit;
+
+        //brute force
         foreach ($price as $index => $value) {
-            if ($value === 0) {
+            $future = array_filter($price,
+                fn($key) => $key > $index,
+                ARRAY_FILTER_USE_KEY
+            );
+
+            if(Arr::empty($future)){
                 continue;
             }
-
-            if ($next = NumberArr::make($price)->next($index)) {
-                $toBuyIndex = $value < $next ? $index : $index + 1;
-            }
-
-            if ($value < $price[$buyIndex]) {
-                $buyIndex = $toBuyIndex;
+            $maxProfit = NumberArr::make(array_values($future))->largest() - $value;
+            if($maxProfit > $profit){
+                $profit = $maxProfit;
             }
         }
 
-        $buy = $price[$buyIndex];
-        $new = array_values(array_filter($price,
-            fn($key) => $key > $buyIndex,
-            ARRAY_FILTER_USE_KEY
-        ));
-//        dump($buy);
-//        dump($buyIndex);
-//        dd($new);
-
-        if (Arr::empty($new)) {
-            return 0;
-        }
-
-        $sell = NumberArr::make($new)->largest();
-        return $sell - $buy;
+        return $profit;
     }
 }
