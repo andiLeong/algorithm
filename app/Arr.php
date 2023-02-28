@@ -165,6 +165,12 @@ class Arr
         }
         return $size;
     }
+    
+    public static function empty($arr)
+    {
+        return static::size($arr) === 0;
+    }
+    
 
     public static function combination($chars, $size, $combinations = [])
     {
