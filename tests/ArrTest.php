@@ -44,6 +44,24 @@ class ArrTest extends TestCase
     }
 
     /**
+     * @dataProvider reverseProvider
+     * @test
+     */
+    public function it_can_reverse_the_array($arr, $expected)
+    {
+        $this->assertSame($expected, Arr::reverse($arr));
+    }
+
+    /**
+     * @dataProvider reverseWithKeyProvider
+     * @test
+     */
+    public function it_can_reverse_the_array_while_keep_the_key($arr, $expected)
+    {
+        $this->assertSame($expected, Arr::reverse($arr, true));
+    }
+
+    /**
      * @dataProvider intersectionProvider
      * @test
      */
@@ -85,6 +103,35 @@ class ArrTest extends TestCase
         return [
             [['foo' => 'bar', 'baz' => 'bax'], ['bar' => 'foo', 'bax' => 'baz']],
             [['foo' => 'bar', 'baz' => 'bar'], ['bar' => 'baz']],
+        ];
+    }
+
+    public static function reverseProvider()
+    {
+        return [
+            [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]],
+            [
+                ['foo' => 'bar', 'hey', 'name' => 'andrew', 'hello'],
+                [0 => 'hello', 'name' => 'andrew', 1 => 'hey', 'foo' => 'bar']
+            ],
+        ];
+    }
+
+    public static function reverseWithKeyProvider()
+    {
+        return [
+            [[0,1,2,3, 'foo' => 'bar', 4], [
+                4 => 4,
+                'foo' => 'bar',
+                3 => 3,
+                2 => 2,
+                1 => 1,
+                0 => 0,
+            ]],
+            [
+                ['foo' => 'bar', 'hey', 'name' => 'andrew', 'hello'],
+                [1 => 'hello', 'name' => 'andrew', 0 => 'hey', 'foo' => 'bar']
+            ],
         ];
     }
 

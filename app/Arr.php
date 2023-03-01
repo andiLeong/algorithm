@@ -79,11 +79,11 @@ class Arr
     {
         $count = [];
 
-        foreach ($arr as $value){
-            if(array_key_exists($value, $count)){
-               $count[$value] += 1;
-            }else{
-               $count[$value] = 1;
+        foreach ($arr as $value) {
+            if (array_key_exists($value, $count)) {
+                $count[$value] += 1;
+            } else {
+                $count[$value] = 1;
             }
         }
 
@@ -99,7 +99,7 @@ class Arr
     {
         $res = [];
 
-        foreach ($arr as $key => $value){
+        foreach ($arr as $key => $value) {
             $res[$value] = $key;
         }
 
@@ -120,8 +120,8 @@ class Arr
 
         $res = [];
 
-        foreach ($arr as $index => $value){
-            if(in_array($value, $arr2, true)){
+        foreach ($arr as $index => $value) {
+            if (in_array($value, $arr2, true)) {
                 $res[$index] = $value;
             }
         }
@@ -139,10 +139,10 @@ class Arr
     {
         $new = [];
 
-        foreach ($arr as $index => $value){
+        foreach ($arr as $index => $value) {
 
-            if(in_array($value, $new)){
-               continue;
+            if (in_array($value, $new)) {
+                continue;
             }
 
             $new[$index] = $value;
@@ -160,43 +160,67 @@ class Arr
     public static function size(array $arr)
     {
         $size = 0;
-        foreach ($arr as $value){
-           $size ++;
+        foreach ($arr as $value) {
+            $size++;
         }
         return $size;
     }
-    
+
+    /**
+     * check array is empty
+     * @param $arr
+     * @return bool
+     */
     public static function empty($arr)
     {
         return static::size($arr) === 0;
     }
-    
+
+    /**
+     * reverse the underline array
+     * @param array $arr
+     * @param bool $preserveKey
+     * @return array|mixed[]
+     */
+    public static function reverse(array $arr, bool $preserveKey = false)
+    {
+        $new = [];
+        foreach ($arr as $index => $value) {
+            if($preserveKey){
+                $new = array_replace([$index => $value], $new);
+            }else{
+                $new = array_merge([$index => $value], $new);
+            }
+        }
+        return $new;
+    }
+
 
     public static function combination($chars, $size, $combinations = [])
     {
-            # if it's the first iteration, the first set
-            # of combinations is the same as the set of characters
-            if (empty($combinations)) {
-                $combinations = $chars;
+        # if it's the first iteration, the first set
+        # of combinations is the same as the set of characters
+        if (empty($combinations)) {
+            $combinations = $chars;
+        }
+
+        # we're done if we're at size 1
+        if ($size == 1) {
+            return $combinations;
+        }
+
+        # initialise array to put new values in
+        $new_combinations = [];
+
+        # loop through existing combinations and character set to create strings
+        foreach ($combinations as $combination) {
+            foreach ($chars as $char) {
+                $new_combinations[] = $combination . $char;
             }
+        }
 
-            # we're done if we're at size 1
-            if ($size == 1) {
-                return $combinations;
-            }
-
-            # initialise array to put new values in
-            $new_combinations = [];
-
-            # loop through existing combinations and character set to create strings
-            foreach ($combinations as $combination) {
-                foreach ($chars as $char) {
-                    $new_combinations[] = $combination . $char;
-                }
-            }
-
-            # call same function again for the next iteration
-            return self::combination($chars, $size - 1, $new_combinations);
+        # call same function again for the next iteration
+        return self::combination($chars, $size - 1, $new_combinations);
     }
 
 }
