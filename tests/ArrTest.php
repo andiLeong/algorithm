@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Arr;
+use App\Utility\Arr;
 use PHPUnit\Framework\TestCase;
 
 class ArrTest extends TestCase

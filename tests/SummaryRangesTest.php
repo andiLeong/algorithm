@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\SummaryRanges;
+use App\Leetcode\SummaryRanges;
 use PHPUnit\Framework\TestCase;
 
 class SummaryRangesTest extends testcase

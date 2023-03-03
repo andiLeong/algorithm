@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Stack;
+use App\Leetcode\Stack;
 use PHPUnit\Framework\TestCase;
 
 class StackTest extends testcase

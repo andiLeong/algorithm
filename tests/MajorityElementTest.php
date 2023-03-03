@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\MajorityElement;
+use App\Leetcode\MajorityElement;
 use PHPUnit\Framework\TestCase;
 
 class MajorityElementTest extends testcase

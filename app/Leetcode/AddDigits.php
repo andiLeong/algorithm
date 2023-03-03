@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Leetcode;
+
+use App\Utility\Number;
 
 class AddDigits
 {

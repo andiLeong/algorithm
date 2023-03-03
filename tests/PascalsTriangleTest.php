@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Triangle;
+use App\Leetcode\Triangle;
 use PHPUnit\Framework\TestCase;
 
 class PascalsTriangleTest extends testcase

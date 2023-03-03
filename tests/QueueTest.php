@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Queue;
+use App\Leetcode\Queue;
 use PHPUnit\Framework\TestCase;
 
 class QueueTest extends testcase

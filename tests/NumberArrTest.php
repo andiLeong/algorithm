@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\NumberArr;
+use App\Utility\NumberArr;
 use PHPUnit\Framework\TestCase;
 
 class NumberArrTest extends TestCase

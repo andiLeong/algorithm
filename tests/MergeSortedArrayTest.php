@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\MergeSortedArray;
+use App\Leetcode\MergeSortedArray;
 use PHPUnit\Framework\TestCase;
 
 class MergeSortedArrayTest extends testcase

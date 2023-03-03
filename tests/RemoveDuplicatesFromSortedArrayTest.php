@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\RemoveDuplicatesFromSortedArray as RemoveDuplicatesFromSortedArrayAlias;
+use App\Leetcode\RemoveDuplicatesFromSortedArray as RemoveDuplicatesFromSortedArrayAlias;
 use PHPUnit\Framework\TestCase;
 
 class RemoveDuplicatesFromSortedArrayTest extends testcase

@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\RomanNumerals;
+use App\Leetcode\RomanNumerals;
 use PHPUnit\Framework\TestCase;
 
 class RomanToIntegerTest extends testcase

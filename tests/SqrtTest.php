@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Sqrt;
+use App\Leetcode\Sqrt;
 use PHPUnit\Framework\TestCase;
 
 class SqrtTest extends testcase

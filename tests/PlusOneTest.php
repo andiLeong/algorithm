@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\PlusOne;
+use App\Leetcode\PlusOne;
 use PHPUnit\Framework\TestCase;
 
 class PlusOneTest extends testcase

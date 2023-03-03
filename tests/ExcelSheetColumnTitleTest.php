@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\ExcelSheetColumnTitle;
+use App\Leetcode\ExcelSheetColumnTitle;
 use PHPUnit\Framework\TestCase;
 
 class ExcelSheetColumnTitleTest extends testcase

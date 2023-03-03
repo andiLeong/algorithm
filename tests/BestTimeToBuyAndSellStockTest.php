@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\BestTimeToBuyAndSellStock;
+use App\Leetcode\BestTimeToBuyAndSellStock;
 use PHPUnit\Framework\TestCase;
 
 class BestTimeToBuyAndSellStockTest extends testcase

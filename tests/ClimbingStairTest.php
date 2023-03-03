@@ -2,7 +2,6 @@
 
 namespace Tests;
 
-use App\ClimbingStairs;
 use PHPUnit\Framework\TestCase;
 
 class ClimbingStairTest extends testcase

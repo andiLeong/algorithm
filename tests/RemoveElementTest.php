@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\RemoveElement;
+use App\Leetcode\RemoveElement;
 use PHPUnit\Framework\TestCase;
 
 class RemoveElementTest extends testcase

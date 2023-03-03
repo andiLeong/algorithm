@@ -17,7 +17,7 @@ class SearchInsertPositionTest extends testcase
     public function it_can_get_array_index_by_value_if_not_found_guess_the_array_index($array, $target, $expected)
     {
 //        dd(range(-2,6));
-        $this->assertSame($expected, \App\SearchInsertPosition::search($array,$target));
+        $this->assertSame($expected, \App\Leetcode\SearchInsertPosition::search($array,$target));
     }
 
     public static function arrayProvider()

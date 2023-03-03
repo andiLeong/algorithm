@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\ValidParentheses;
+use App\Leetcode\ValidParentheses;
 use PHPUnit\Framework\TestCase;
 
 class ValidParenthesesTest extends testcase

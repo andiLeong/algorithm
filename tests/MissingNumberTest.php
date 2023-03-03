@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\MissingNumber;
+use App\Leetcode\MissingNumber;
 use PHPUnit\Framework\TestCase;
 
 class MissingNumberTest extends testcase

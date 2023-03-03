@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Leetcode;
 
 class TwoSum
 {
@@ -19,5 +19,7 @@ class TwoSum
                }
             }
         }
+
+        return [];
     }
 }

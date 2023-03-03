@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\AddDigits;
+use App\Leetcode\AddDigits;
 use PHPUnit\Framework\TestCase;
 
 class AddDigitisTest extends testcase

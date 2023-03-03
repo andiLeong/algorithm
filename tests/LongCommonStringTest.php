@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\LongestCommonString;
+use App\Leetcode\LongestCommonString;
 use PHPUnit\Framework\TestCase;
 
 class LongCommonStringTest extends testcase

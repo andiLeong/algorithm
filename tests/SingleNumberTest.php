@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\SingleNumber;
+use App\Leetcode\SingleNumber;
 use PHPUnit\Framework\TestCase;
 
 class SingleNumberTest extends testcase

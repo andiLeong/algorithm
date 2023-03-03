@@ -1,6 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Leetcode;
+
+use App\Utility\Arr;
+use App\Utility\NumberArr;
 
 class BestTimeToBuyAndSellStock
 {

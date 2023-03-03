@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Number;
+use App\Utility\Number;
 use PHPUnit\Framework\TestCase;
 
 class NumberTest extends TestCase

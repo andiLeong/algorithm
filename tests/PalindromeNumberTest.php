@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\PalindromeNumber;
+use App\Leetcode\PalindromeNumber;
 use PHPUnit\Framework\TestCase;
 
 class PalindromeNumberTest extends testcase
