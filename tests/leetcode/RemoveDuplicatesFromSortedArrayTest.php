@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\leetcode;
 
 use App\Leetcode\RemoveDuplicatesFromSortedArray as RemoveDuplicatesFromSortedArrayAlias;
 use PHPUnit\Framework\TestCase;

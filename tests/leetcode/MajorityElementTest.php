@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\leetcode;
 
 use App\Leetcode\MajorityElement;
 use PHPUnit\Framework\TestCase;
