@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\leetcode;
+namespace Tests\Leetcode;
 
 use App\Leetcode\PlusOne;
 use PHPUnit\Framework\TestCase;

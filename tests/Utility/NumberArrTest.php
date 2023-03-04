@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\utility;
+namespace Tests\Utility;
 
 use App\Utility\NumberArr;
 use PHPUnit\Framework\TestCase;

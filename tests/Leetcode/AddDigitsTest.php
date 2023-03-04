@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\leetcode;
+namespace Tests\Leetcode;
 
 use App\Leetcode\AddDigits;
 use PHPUnit\Framework\TestCase;
 
-class AddDigitisTest extends testcase
+class AddDigitsTest extends testcase
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\leetcode;
+namespace Tests\Leetcode;
 
 use App\Leetcode\TwoSum;
 use PHPUnit\Framework\TestCase;
@@ -25,10 +25,10 @@ class TwoSumTest extends testcase
     public static function sumDataProvider()
     {
         return [
-            [ [2,7,11,15], 9, [0,1] ],
-            [ [3,2,4], 6, [1,2] ],
-            [ [3,3], 6, [0,1] ],
-//            [ [3,2,3], 6, [0,2] ],
+//            [[2, 7, 11, 15], 9, [0, 1]],
+            [[3, 2, 4], 6, [1, 2]],
+//            [[3, 3], 6, [0, 1]],
+//            [[3, 2, 3], 6, [0, 2]],
         ];
     }
 }

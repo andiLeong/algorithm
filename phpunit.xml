@@ -13,8 +13,14 @@
         beStrictAboutCoverageMetadata="true"
 >
   <testsuites>
-    <testsuite name="test case">
-      <directory>tests</directory>
+    <testsuite name="Leetcode">
+      <directory suffix="Test.php">./tests/Leetcode</directory>
+    </testsuite>
+    <testsuite name="Utility">
+      <directory suffix="Test.php">./tests/Utility</directory>
+    </testsuite>
+    <testsuite name="AlgoExpert">
+      <directory suffix="Test.php">./tests/AlgoExpert</directory>
     </testsuite>
   </testsuites>
 </phpunit>
