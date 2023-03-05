@@ -28,7 +28,7 @@ class SortedSquareArrayTest extends TestCase
         $this->assertSame($res, SortedSquareArray::sort($arr));
     }
 
-    public function provider()
+    public static function provider()
     {
         return [
             [[1, 2, 3, 5, 6, 8, 9], [1, 4, 9, 25, 36, 64, 81]],
