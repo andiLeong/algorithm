@@ -186,13 +186,26 @@ class Arr
     {
         $new = [];
         foreach ($arr as $index => $value) {
-            if($preserveKey){
+            if ($preserveKey) {
                 $new = array_replace([$index => $value], $new);
-            }else{
+            } else {
                 $new = array_merge([$index => $value], $new);
             }
         }
         return $new;
+    }
+
+    /**
+     * to swap the given index of array
+     * @param $index
+     * @param $swapIndex
+     * @param $arr
+     */
+    public static function swap($index, $swapIndex, &$arr): void
+    {
+        $current = $arr[$index];
+        $arr[$index] = $arr[$swapIndex];
+        $arr[$swapIndex] = $current;
     }
 
 
