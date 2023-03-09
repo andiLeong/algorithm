@@ -42,11 +42,7 @@ class Number
         // 1 => 10
         // 2 => 100
         // 3 => 1000
-        $mod = 1;
-
-        for ($x = 1; $x <= $length; $x++) {
-            $mod = $mod * 10;
-        }
+        $mod = 10 ** $length;
 
         return $mod > PHP_INT_MAX
             ? $number
