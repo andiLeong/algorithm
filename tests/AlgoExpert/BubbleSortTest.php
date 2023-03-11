@@ -31,11 +31,37 @@ class BubbleSortTest extends TestCase
         $this->assertSame($expected, $arr);
     }
 
+    /**
+     * @dataProvider sortCallbackProvider
+     * @test
+     */
+    public function it_can_bubble_sort_array_using_callback($arr, $fn, $expected)
+    {
+        BubbleSort::sort($arr, $fn);
+        $this->assertSame($expected, $arr);
+    }
+
     public static function provider()
     {
         return [
+            [[5, 1, 4, 2, 8], [1, 2, 4, 5, 8]],
             [[5, 43, 2, 6, 1, 0], [0, 1, 2, 5, 6, 43]],
             [[8, 5, 2, 9, 5, 6, 3], [2, 3, 5, 5, 6, 8, 9]],
+        ];
+    }
+
+    public static function sortCallbackProvider()
+    {
+        return [
+            [[5, 1, 4, 2, 8], function ($a, $b) {
+                return $a < $b;
+            }, [8, 5, 4, 2, 1]],
+            [[5, 1, 4, 2, 8], function ($a, $b) {
+                return $a < 3;
+            }, [5, 4, 8, 2, 1]],
+            [[2, 3, 6, 7, 4, 5], function ($a, $b) {
+                return $a % 2 !== 0;
+            }, [2, 6, 4, 5, 7, 3]],
         ];
     }
 }

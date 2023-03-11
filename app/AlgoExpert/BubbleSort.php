@@ -2,25 +2,30 @@
 
 namespace App\AlgoExpert;
 
+use App\Utility\Arr;
+
 class BubbleSort
 {
-    public static function sort(&$arr)
+    public static function sort(&$arr, $fn = null)
     {
+        $fn ??= function ($a, $b) {
+            return $a > $b;
+        };
+
         $size = sizeof($arr);
         for ($i = 0; $i < $size; $i++) {
+
             $swapped = false;
-            for ($j = 0; $j < $size - $i - 1; $j++)
-            {
-                if ($arr[$j] > $arr[$j+1])
-                {
-                    $t = $arr[$j];
-                    $arr[$j] = $arr[$j+1];
-                    $arr[$j+1] = $t;
+            $pointer = 0;
+            while ($pointer < $size - $i - 1) {
+                if ($fn($arr[$pointer], $arr[$pointer + 1])) {
+                    Arr::swap($pointer, $pointer + 1, $arr);
                     $swapped = true;
                 }
+                $pointer++;
             }
 
-            if ($swapped === false){
+            if ($swapped === false) {
                 break;
             }
         }
