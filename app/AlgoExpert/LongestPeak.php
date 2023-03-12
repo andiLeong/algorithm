@@ -19,16 +19,16 @@ class LongestPeak
 
             $left = $i - 2;
             while ($left >= 0) {
-                if($arr[$left] >= $arr[$left + 1]){
-                   break;
+                if ($arr[$left] >= $arr[$left + 1]) {
+                    break;
                 }
                 $left--;
             }
 
             $right = $i + 2;
-            while($right <= sizeof($arr) - 1){
-                if($arr[$right] >= $arr[$right - 1]){
-                   break;
+            while ($right <= sizeof($arr) - 1) {
+                if ($arr[$right] >= $arr[$right - 1]) {
+                    break;
                 }
                 $right++;
             }
@@ -36,7 +36,7 @@ class LongestPeak
             $start = $left + 1;
             $end = $right - 1;
             $calculatedLength = $end - $start + 1;
-            if($calculatedLength > $length){
+            if ($calculatedLength > $length) {
                 $length = $calculatedLength;
             }
 
