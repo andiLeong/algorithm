@@ -8,14 +8,12 @@ class TwoNumberSum
     {
         $new = [];
 
-        foreach ($number as $index => $value) {
-
+        foreach ($number as $value) {
             $result = $target - $value;
-            if (array_key_exists($result, $new) && $index !== $new[$result]) {
+            if (array_key_exists($result, $new)) {
                 return [$value, $result];
             }
-
-            $new[$value] = $index;
+            $new[$value] = true;
         }
 
         return [];

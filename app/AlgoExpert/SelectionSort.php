@@ -2,6 +2,8 @@
 
 namespace App\AlgoExpert;
 
+use App\Utility\Arr;
+
 class SelectionSort
 {
 
@@ -16,26 +18,17 @@ class SelectionSort
     public static function sort(&$arr)
     {
         $size = count($arr);
-        for ($i = 0; $i < $size; $i++) {
-
-            if($i === $size - 1){
-                break;
-            }
+        for ($i = 0; $i < $size - 1; $i++) {
 
             $minIndex = $i;
-            $nextIndex = $i + 1;
-
-            while (isset($arr[$nextIndex])) {
+            for ($nextIndex = $i + 1; $nextIndex < $size; $nextIndex++) {
                 if ($arr[$minIndex] > $arr[$nextIndex]) {
                     $minIndex = $nextIndex;
                 }
-                $nextIndex++;
             }
 
             if ($arr[$minIndex] < $arr[$i]) {
-                $current = $arr[$i];
-                $arr[$i] = $arr[$minIndex];
-                $arr[$minIndex] = $current;
+                Arr::swap($i, $minIndex, $arr);
             }
         }
     }
