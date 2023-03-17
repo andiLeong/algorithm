@@ -2,7 +2,7 @@
 
 namespace Tests\AlgoExpert;
 
-use App\AlgoExpert\FourNumberSum;
+use App\AlgoExpert\ThreeNumberSum;
 use PHPUnit\Framework\TestCase;
 
 class ThreeNumberSumTest extends TestCase
@@ -32,7 +32,7 @@ class ThreeNumberSumTest extends TestCase
      */
     public function three_number_sum_test($arr, $target, $expected)
     {
-        $this->assertSame($expected, FourNumberSum::sum($arr, $target));
+        $this->assertSame($expected, ThreeNumberSum::sum($arr, $target));
     }
 
     public static function provider()
