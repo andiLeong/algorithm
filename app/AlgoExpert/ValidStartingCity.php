@@ -38,6 +38,10 @@ class ValidStartingCity
                     $index = $x;
                 }
 
+                if ($index === 0) {
+                    $index = $lastIndex;
+                }
+
                 $miles -= $distances[$index - 1];
                 if ($miles < 0) {
                     $valid = false;
