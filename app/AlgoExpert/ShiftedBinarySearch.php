@@ -8,7 +8,6 @@ class ShiftedBinarySearch
     {
         $left = 0;
         $right = sizeof($arr) - 1;
-//        dd($middle);
 
         while ($left <= $right) {
             $middle = floor(($left + $right) / 2);
@@ -20,8 +19,6 @@ class ShiftedBinarySearch
             if ($middleValue === $target) {
                 return (int)$middle;
             }
-
-//            dd($middleValue);
 
             if ($middleValue >= $leftValue) {
                 if ($target < $middleValue && $target >= $leftValue) {
