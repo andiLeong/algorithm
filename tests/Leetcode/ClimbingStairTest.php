@@ -2,6 +2,7 @@
 
 namespace Tests\Leetcode;
 
+use App\Leetcode\ClimbingStairs;
 use PHPUnit\Framework\TestCase;
 
 class ClimbingStairTest extends testcase
@@ -17,16 +18,19 @@ class ClimbingStairTest extends testcase
      */
     public function climbing_stair_test($steps, $result)
     {
-        $this->markTestSkipped();
-//        $this->assertSame($result, ClimbingStairs::start($steps));
+        $this->assertSame($result, ClimbingStairs::start($steps));
     }
 
     public static function provider()
     {
         return [
-//            [3, 3],
-//            [2, 2],
-            [35, 2],
+            [3, 3],
+            [2, 2],
+            [4, 5],
+            [10, 89],
+            [5, 8],
+            [6, 13],
+            [7, 21],
         ];
     }
 }
