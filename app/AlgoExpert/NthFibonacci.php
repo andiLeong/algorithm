@@ -14,11 +14,10 @@ class NthFibonacci
         $arr = [0, 1];
 
         for ($i = 2; $i < $number; $i++) {
-            $size = sizeof($arr);
-            $arr[] = $arr[$size - 1] + $arr[$size - 2];
+            $arr[$i] = $arr[$i - 1] + $arr[$i - 2];
         }
 
-        return $arr[sizeof($arr) - 1];
+        return $arr[$number - 1];
     }
 
     public static function solutionTwo($number)
